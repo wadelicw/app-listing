@@ -1,11 +1,9 @@
-import styles from "./styles.module.scss"
-
 const appsRecommend = props => {
 
 	const iconUrl = props.icon;
 
 	return (
-		<div className={styles.appsBox}>
+		<div>
 			<picture >
 				<img src={iconUrl}></img>
 			</picture>

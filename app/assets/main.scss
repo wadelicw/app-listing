@@ -1,0 +1,17 @@
+@import "./variable.scss";
+
+html, body {
+	background-color: $bg-color;
+}
+
+.app-listing {
+	
+}
+
+.app-listing__number {
+	&> p {
+
+	}
+}
+
+
