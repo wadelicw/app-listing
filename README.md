@@ -6,4 +6,4 @@
  - [Http Requests](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Methods)
  - Markdown
  - [axios](https://github.com/axios/axios)
- 
+ - [Blocking vs Non-blocking](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking)

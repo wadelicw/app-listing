@@ -1,13 +1,6 @@
 import styles from "./styles.module.scss"
 
 const appListing = (props) => {
-	const borderSwitch = props.toggle;
-	let borderStyles = null;
-	if (borderSwitch) {
-		borderStyles = styles.boxBorder;
-	} else {
-		borderStyles = styles.circleBorder;
-	}
 
 	const pictureUrl = props.icon;
 
@@ -19,10 +12,7 @@ const appListing = (props) => {
 
 			<div className={styles.pictureBox}>
 				<figure>
-
-					<img className={borderStyles} src={pictureUrl}></img>
-
-
+					<img src={pictureUrl}></img>
 				</figure>
 			</div>
 
