@@ -27,4 +27,19 @@
 }
 
 
+.title{
 
+  font-size: 120%;
+  font-weight: 800;
+  height: 10%;
+  padding-bottom: 0px;
+  margin-block-start: 15px;
+  margin-block-end: 0;
+}
+
+
+.recommendBox{
+  height: 180px;
+
+
+}

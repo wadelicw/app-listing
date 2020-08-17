@@ -28,11 +28,16 @@ $font-color: rgb(128, 119, 119);
         img{
             height: 100%;
             width: 100%;
-            border-radius: 20px;  
-            
         }
     }
 
+}
+
+.boxBorder{
+    border-radius: 20px; 
+}
+.circleBorder{
+    border-radius: 50px;  
 }
 
 
