@@ -14,8 +14,9 @@ class Home extends React.Component {
 		this.state = {
 			loaded: false, loading: true,
 			error: false,
-			free: { results: [] }, 
-			grossing: { results: [] }
+			free: { results: [] },
+			grossing: { results: [] },
+			input: ""
 		};
 	}
 
@@ -45,7 +46,14 @@ class Home extends React.Component {
 
 	render() {
 
-		const { loading, error, free, grossing } = this.state;
+		let { loading, error, free, grossing, input } = this.state;
+
+		if (input.trim() != "") {
+			free = free.filter(item => {
+				return (item?.name ?? "").includes(input);
+			});
+		}
+
 
 		return (
 			<div>
