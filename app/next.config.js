@@ -1,4 +1,5 @@
 "use strict";
+const path = require("path");
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 
 const config = {
@@ -18,4 +19,4 @@ const config = {
 	}
 };
 
-export default config;
+module.exports = config;
