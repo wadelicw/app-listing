@@ -1,12 +1,11 @@
 // From node_modules
 import React from "react";
 import Head from "next/head";
-import HorizontalScroll from "react-scroll-horizontal";
 // From Components
 import api from "api";
 import InputBar from "../components/inputBar/inputBar.js";
 import AppListing from "../components/appListing/appListing.js";
-import AppsRecommend from "../components/appsRecommend/appsRecommend.js";
+import AppsRecommend from "components/AppsRecommend";
 // From css
 import styles from "../styles/Home.module.css";
 
@@ -17,7 +16,8 @@ class Home extends React.Component {
 		this.state = {
 			loaded: false, loading: true,
 			error: false,
-			free: { results: [] }, grossing: []
+			free: { results: [] }, 
+			grossing: { results: [] }
 		};
 	}
 
@@ -49,33 +49,6 @@ class Home extends React.Component {
 
 		const { loading, error, free, grossing } = this.state;
 
-		// let appsArray = [];
-		// if (loading) {
-		// 	appsArray = ["Top Apps"];
-		// 	for (var i = 0; i < 10; i++) {
-
-		// 		appsArray.push(
-		// 			<AppListing
-		// 				key={i}
-		// 				appName={appsData.feed.results[i].name}
-		// 				number={i + 1}
-		// 				icon={appsData.feed.results[i].artworkUrl100}
-		// 				genre={appsData.feed.results[i].genres[0].name}
-		// 			/>
-		// 		);
-		// 	}
-		// }
-
-
-		// let recommendArray = [];
-		// if (isLoadingRecommend) {
-		// 	for (i = 0; i < 10; i++) {
-		// 		recommendArray.push(
-
-		// 		)
-		// 	}
-		// }
-
 		return (
 			<div className={styles.container}>
 				<Head>
@@ -84,6 +57,31 @@ class Home extends React.Component {
 				</Head>
 
 				<main className={styles.main}>
+					<div>
+						<InputBar className={styles.input}></InputBar>
+					</div>
+
+					<div>
+						<p className={styles.title}>推介</p>
+						<div className={styles.recommendBox}>
+							{
+								loading && <div>Loading.</div>
+							}
+							<div>
+								{
+									grossing.results.map((app, index) => (
+										<AppListing
+											key={index}
+											appName={app.name}
+											number={index + 1}
+											icon={app.artworkUrl100}
+											genre={app.genres[0].name}
+										/>
+									))
+								}
+							</div>
+						</div>
+					</div>
 					<div>
 						{
 							loading && <div> Loading ... </div>
