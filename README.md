@@ -9,3 +9,4 @@
  - [Blocking vs Non-blocking](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking)
  - [Documents](https://nextjs.org/docs/advanced-features/custom-document)
  - [Bootstrap](https://www.w3schools.com/bootstrap)
+ - [ES2020](https://www.freecodecamp.org/news/javascript-new-features-es2020)
