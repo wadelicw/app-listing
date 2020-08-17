@@ -4,6 +4,7 @@ import axios from "axios";
 import Head from "next/head";
 import HorizontalScroll from "react-scroll-horizontal";
 // From Components
+import api from "api";
 import InputBar from "components/inputBar/inputBar.js";
 import AppListing from "components/appListing/appListing.js";
 import AppsRecommend from "components/appsRecommend/appsRecommend.js";
@@ -27,7 +28,6 @@ export default function Home() {
 		Top 100:
 		const targetUrl = "https://rss.itunes.apple.com/api/v1/hk/ios-apps/top-free/all/100/explicit.json"
 		*/
-
 		axios(targetUrl)
 
 			.then(res => setAppsData(res.data))
