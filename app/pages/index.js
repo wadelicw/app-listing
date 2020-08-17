@@ -17,7 +17,7 @@ class Home extends React.Component {
 		this.state = {
 			loaded: false, loading: true,
 			error: false,
-			free: [], grossing: []
+			free: { results: [] }, grossing: []
 		};
 	}
 
@@ -49,10 +49,6 @@ class Home extends React.Component {
 
 		const { loading, error, free, grossing } = this.state;
 
-		return (
-			<div/>
-		);
-
 		// let appsArray = [];
 		// if (loading) {
 		// 	appsArray = ["Top Apps"];
@@ -71,21 +67,14 @@ class Home extends React.Component {
 		// }
 
 
-		let recommendArray = [];
-		if (isLoadingRecommend) {
-			for (i = 0; i < 10; i++) {
-				recommendArray.push(
-					<AppsRecommend
-						key={i}
-						appName={appsRecommend.feed.results[i].name}
-						number={i + 1}
-						icon={appsRecommend.feed.results[i].artworkUrl100}
-						genre={appsRecommend.feed.results[i].genres[0].name}
-					/>
-				)
-			}
-		}
+		// let recommendArray = [];
+		// if (isLoadingRecommend) {
+		// 	for (i = 0; i < 10; i++) {
+		// 		recommendArray.push(
 
+		// 		)
+		// 	}
+		// }
 
 		return (
 			<div className={styles.container}>
@@ -95,33 +84,21 @@ class Home extends React.Component {
 				</Head>
 
 				<main className={styles.main}>
-
-					<div >
-						<InputBar className={styles.input}></InputBar>
-					</div>
-
-
 					<div>
-						<p className={styles.title}>推介</p>
-
-						<div className={styles.recommendBox}>
-							{isLoadingRecommend ? (console.log(appsRecommend)) : <div>Loading.</div>}
-							<HorizontalScroll>
-								{recommendArray}
-							</HorizontalScroll>
-
-						</div>
-
-
-					</div>
-
-
-
-					<div>
-						{hasError ? <div>Error occured.</div> : null}
-						{isLoading ? (console.log(appsData)) : <div>Loading.</div>}
-						{appsArray}
-
+						{
+							loading && <div> Loading ... </div>
+						}
+						{
+							free.results.map((app, index) => (
+								<AppsRecommend
+									key={index}
+									appName={app.name}
+									number={index + 1}
+									icon={app.artworkUrl100}
+									genre={app.genres[0].name}
+								/>
+							))
+						}
 					</div>
 				</main>
 			</div>

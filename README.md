@@ -7,3 +7,5 @@
  - Markdown
  - [axios](https://github.com/axios/axios)
  - [Blocking vs Non-blocking](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking)
+ - [Documents](https://nextjs.org/docs/advanced-features/custom-document)
+ 
